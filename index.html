@@ -1,0 +1,837 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Consciência Negra | Memória e Igualdade</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #111111;
+    color: #f5f5f5;
+    line-height: 1.7;
+}
+
+/* CABEÇALHO */
+
+header {
+    background: #171717;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #c99b43;
+}
+
+.logo {
+    color: #e5bd69;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #e5bd69;
+}
+
+/* INÍCIO */
+
+.hero {
+    min-height: 510px;
+    padding: 100px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background:
+    linear-gradient(120deg,
+    rgba(0,0,0,.92),
+    rgba(35,20,12,.88)),
+    repeating-linear-gradient(
+    45deg,
+    #3b261b 0px,
+    #3b261b 12px,
+    #251710 12px,
+    #251710 24px
+    );
+}
+
+.hero span {
+    color: #e5bd69;
+    letter-spacing: 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 7vw, 70px);
+    margin: 15px 0;
+    color: #fff;
+}
+
+.hero p {
+    max-width: 700px;
+    font-size: 18px;
+    color: #ddd;
+}
+
+.btn {
+    display: inline-block;
+    background: #c99b43;
+    color: #171717;
+    padding: 14px 28px;
+    border-radius: 8px;
+    margin-top: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #f1cf80;
+    transform: translateY(-3px);
+}
+
+/* SEÇÕES */
+
+section {
+    padding: 75px 8%;
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo h2 {
+    color: #e5bd69;
+    font-size: 32px;
+}
+
+.titulo p {
+    color: #bbb;
+    margin-top: 8px;
+}
+
+/* HISTÓRIA */
+
+.historia {
+    background: #191919;
+}
+
+.historia-conteudo {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.historia-conteudo p {
+    margin-bottom: 18px;
+    color: #ddd;
+    font-size: 17px;
+}
+
+/* DESTAQUES */
+
+.destaques {
+    background: #111;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: #202020;
+    border: 1px solid #39302a;
+    border-radius: 14px;
+    padding: 28px;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    border-color: #c99b43;
+}
+
+.card .icone {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    color: #e5bd69;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #ccc;
+}
+
+/* PERSONALIDADES */
+
+.personalidades {
+    background: #191919;
+}
+
+.pessoa {
+    background: #25211e;
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 4px solid #c99b43;
+}
+
+.pessoa h3 {
+    color: #edc875;
+    margin-bottom: 10px;
+}
+
+/* CULTURA */
+
+.cultura {
+    background: #111;
+}
+
+.cultura-item {
+    padding: 20px;
+    background: #202020;
+    border-radius: 10px;
+    text-align: center;
+    border-bottom: 3px solid #b58b40;
+}
+
+.cultura-item h3 {
+    color: #e5bd69;
+}
+
+/* FRASE */
+
+.frase {
+    background: linear-gradient(120deg, #3d2518, #171717);
+    text-align: center;
+    padding: 65px 10%;
+}
+
+.frase h2 {
+    font-size: 28px;
+    color: #edc875;
+    margin-bottom: 15px;
+}
+
+/* QUIZ */
+
+.quiz {
+    background: #191919;
+}
+
+.pergunta {
+    max-width: 750px;
+    background: #242424;
+    padding: 25px;
+    margin: 20px auto;
+    border-radius: 12px;
+    border: 1px solid #45403a;
+}
+
+.pergunta h3 {
+    margin-bottom: 15px;
+    color: #edc875;
+}
+
+.opcao {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin: 9px 0;
+    padding: 12px;
+    background: #343434;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.opcao:hover:not(:disabled) {
+    background: #55432d;
+}
+
+.opcao:disabled {
+    cursor: default;
+    opacity: .9;
+}
+
+.opcao.certa {
+    background: #205c37;
+    border-color: #59bd7a;
+}
+
+.opcao.errada {
+    background: #752d2d;
+    border-color: #dd7777;
+}
+
+.feedback {
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+#resultado {
+    text-align: center;
+    color: #edc875;
+    font-size: 22px;
+    margin-top: 25px;
+}
+
+/* REFERÊNCIAS */
+
+.referencias {
+    background: #111;
+    text-align: center;
+}
+
+.referencias a {
+    color: #edc875;
+    display: inline-block;
+    margin: 8px;
+}
+
+/* RODAPÉ */
+
+footer {
+    background: #080808;
+    padding: 25px;
+    text-align: center;
+    color: #999;
+    border-top: 2px solid #b58b40;
+}
+
+footer strong {
+    color: #e5bd69;
+}
+
+/* CELULAR */
+
+@media (max-width: 650px) {
+    header {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .hero {
+        padding: 75px 6%;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        scroll-behavior: auto;
+        transition: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">✊ Consciência Negra</div>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#historia">História</a>
+        <a href="#personalidades">Personalidades</a>
+        <a href="#cultura">Cultura</a>
+        <a href="#quiz">Quiz</a>
+    </nav>
+</header>
+
+<!-- INÍCIO -->
+
+<div class="hero" id="inicio">
+
+    <span>20 DE NOVEMBRO</span>
+
+    <h1>Consciência Negra</h1>
+
+    <p>
+        Nossa história merece ser lembrada.
+        Nossa cultura merece ser valorizada.
+        E o respeito deve existir todos os dias.
+    </p>
+
+    <a href="#historia" class="btn">
+        Conheça nossa história
+    </a>
+
+</div>
+
+<!-- HISTÓRIA -->
+
+<section class="historia" id="historia">
+
+    <div class="titulo">
+        <h2>O que é Consciência Negra?</h2>
+        <p>Memória, reconhecimento e igualdade.</p>
+    </div>
+
+    <div class="historia-conteudo">
+
+        <p>
+            A Consciência Negra é um momento de reflexão
+            sobre a história, a cultura e a luta da população
+            negra no Brasil.
+        </p>
+
+        <p>
+            A data de 20 de novembro homenageia Zumbi dos
+            Palmares, importante líder do Quilombo dos Palmares,
+            que morreu em 1695.
+        </p>
+
+        <p>
+            Esse dia nos lembra da resistência contra a
+            escravidão, da luta por liberdade e da importância
+            de combater o racismo e a discriminação.
+        </p>
+
+        <p>
+            Atualmente, o dia 20 de novembro é feriado nacional,
+            conforme a Lei nº 14.759, de 2023.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- IMPORTÂNCIA -->
+
+<section class="destaques">
+
+    <div class="titulo">
+        <h2>Por que essa data é importante?</h2>
+        <p>Conhecer o passado ajuda a construir um futuro melhor.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icone">📖</div>
+            <h3>Conhecimento</h3>
+            <p>
+                Aprender sobre a história africana e
+                afro-brasileira é valorizar nossas origens.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icone">🤝</div>
+            <h3>Igualdade</h3>
+            <p>
+                Todas as pessoas merecem respeito,
+                oportunidades e os mesmos direitos.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icone">✊</div>
+            <h3>Resistência</h3>
+            <p>
+                Recordar as lutas de pessoas que enfrentaram
+                a escravidão e a discriminação.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icone">🌍</div>
+            <h3>Diversidade</h3>
+            <p>
+                Reconhecer a riqueza das diferentes culturas,
+                tradições e identidades.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PERSONALIDADES -->
+
+<section class="personalidades" id="personalidades">
+
+    <div class="titulo">
+        <h2>Personalidades negras</h2>
+        <p>Pessoas que marcaram a história brasileira.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="pessoa">
+            <h3>Zumbi dos Palmares</h3>
+            <p>
+                Foi um dos principais líderes do Quilombo
+                dos Palmares e tornou-se símbolo da resistência
+                negra contra a escravidão.
+            </p>
+        </div>
+
+        <div class="pessoa">
+            <h3>Dandara dos Palmares</h3>
+            <p>
+                Sua memória está ligada à resistência
+                do Quilombo dos Palmares e à luta
+                pela liberdade.
+            </p>
+        </div>
+
+        <div class="pessoa">
+            <h3>Carolina Maria de Jesus</h3>
+            <p>
+                Escritora brasileira conhecida pelo livro
+                "Quarto de Despejo", no qual registrou
+                experiências de sua vida.
+            </p>
+        </div>
+
+        <div class="pessoa">
+            <h3>Machado de Assis</h3>
+            <p>
+                Um dos maiores escritores brasileiros,
+                autor de obras importantes como
+                "Dom Casmurro" e "Memórias Póstumas de Brás Cubas".
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CULTURA -->
+
+<section class="cultura" id="cultura">
+
+    <div class="titulo">
+        <h2>A influência da cultura africana no Brasil</h2>
+        <p>Uma herança presente no nosso dia a dia.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="cultura-item">
+            <div class="icone">🥁</div>
+            <h3>Música</h3>
+            <p>
+                Samba, maracatu, jongo e muitos outros ritmos
+                possuem importantes raízes africanas.
+            </p>
+        </div>
+
+        <div class="cultura-item">
+            <div class="icone">🍲</div>
+            <h3>Culinária</h3>
+            <p>
+                Acarajé, vatapá e outras comidas fazem parte
+                da influência africana na culinária brasileira.
+            </p>
+        </div>
+
+        <div class="cultura-item">
+            <div class="icone">💃</div>
+            <h3>Dança</h3>
+            <p>
+                A capoeira e diversas manifestações
+                culturais representam essa herança.
+            </p>
+        </div>
+
+        <div class="cultura-item">
+            <div class="icone">🎨</div>
+            <h3>Arte</h3>
+            <p>
+                A arte afro-brasileira expressa identidade,
+                criatividade, memória e resistência.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FRASE -->
+
+<div class="frase">
+
+    <h2>Respeito não tem cor. Igualdade é um direito!</h2>
+
+    <p>
+        Valorizar a Consciência Negra é reconhecer
+        a importância da população negra na construção
+        da sociedade brasileira.
+    </p>
+
+</div>
+
+<!-- QUIZ -->
+
+<section class="quiz" id="quiz">
+
+    <div class="titulo">
+        <h2>🎯 Teste seus conhecimentos</h2>
+        <p>Responda às perguntas e veja quantas acertou!</p>
+    </div>
+
+    <div class="pergunta" data-respondida="false">
+        <h3>1. Em qual dia é celebrado o Dia da Consciência Negra?</h3>
+
+        <button class="opcao" data-correta="false">
+            13 de maio
+        </button>
+
+        <button class="opcao" data-correta="true">
+            20 de novembro
+        </button>
+
+        <button class="opcao" data-correta="false">
+            7 de setembro
+        </button>
+
+        <p class="feedback" aria-live="polite"></p>
+    </div>
+
+    <div class="pergunta" data-respondida="false">
+        <h3>2. Quem foi Zumbi dos Palmares?</h3>
+
+        <button class="opcao" data-correta="true">
+            Um importante líder do Quilombo dos Palmares.
+        </button>
+
+        <button class="opcao" data-correta="false">
+            Um imperador brasileiro.
+        </button>
+
+        <button class="opcao" data-correta="false">
+            Um explorador português.
+        </button>
+
+        <p class="feedback" aria-live="polite"></p>
+    </div>
+
+    <div class="pergunta" data-respondida="false">
+        <h3>3. Qual é um dos principais objetivos dessa data?</h3>
+
+        <button class="opcao" data-correta="false">
+            Esquecer a história brasileira.
+        </button>
+
+        <button class="opcao" data-correta="false">
+            Separar as pessoas.
+        </button>
+
+        <button class="opcao" data-correta="true">
+            Valorizar a cultura negra e combater o racismo.
+        </button>
+
+        <p class="feedback" aria-live="polite"></p>
+    </div>
+
+    <div id="resultado" aria-live="polite">
+        Responda às três perguntas!
+    </div>
+
+    <div style="text-align:center">
+        <button class="btn" id="reiniciar">
+            Refazer o quiz
+        </button>
+    </div>
+
+</section>
+
+<!-- FONTES -->
+
+<section class="referencias">
+
+    <div class="titulo">
+        <h2>Fontes para conhecer mais</h2>
+        <p>Consulte materiais de instituições oficiais.</p>
+    </div>
+
+    <a href="https://www.gov.br/palmares/pt-br"
+       target="_blank" rel="noopener noreferrer">
+        Fundação Cultural Palmares
+    </a>
+
+    <a href="https://www.gov.br/mdh/pt-br"
+       target="_blank" rel="noopener noreferrer">
+        Ministério dos Direitos Humanos
+    </a>
+
+    <a href="https://legislacao.presidencia.gov.br/"
+       target="_blank" rel="noopener noreferrer">
+        Legislação da Presidência da República
+    </a>
+
+</section>
+
+<!-- RODAPÉ -->
+
+<footer>
+
+    <p>
+        ✊ <strong>Consciência Negra</strong>
+    </p>
+
+    <p>
+        Respeito, história, cultura e igualdade.
+    </p>
+
+    <p>
+        © <span id="ano"></span> - Projeto educativo
+    </p>
+
+</footer>
+
+<script>
+
+// ANO AUTOMÁTICO
+
+document.getElementById("ano").textContent =
+    new Date().getFullYear();
+
+// QUIZ
+
+const perguntas = document.querySelectorAll(".pergunta");
+const resultado = document.getElementById("resultado");
+
+let acertos = 0;
+let respondidas = 0;
+
+perguntas.forEach((pergunta) => {
+
+    const botoes = pergunta.querySelectorAll(".opcao");
+    const feedback = pergunta.querySelector(".feedback");
+
+    botoes.forEach((botao) => {
+
+        botao.addEventListener("click", () => {
+
+            if (pergunta.dataset.respondida === "true") {
+                return;
+            }
+
+            pergunta.dataset.respondida = "true";
+            respondidas++;
+
+            const acertou = botao.dataset.correta === "true";
+
+            if (acertou) {
+                acertos++;
+                feedback.textContent = "✅ Muito bem! Resposta correta!";
+            } else {
+                const correta = Array.from(botoes).find(
+                    b => b.dataset.correta === "true"
+                );
+
+                feedback.textContent =
+                    "❌ Resposta incorreta. Resposta certa: " +
+                    correta.textContent.trim();
+            }
+
+            botoes.forEach((b) => {
+
+                b.disabled = true;
+
+                if (b.dataset.correta === "true") {
+                    b.classList.add("certa");
+                }
+
+                if (b === botao && !acertou) {
+                    b.classList.add("errada");
+                }
+
+            });
+
+            if (respondidas === perguntas.length) {
+
+                resultado.textContent =
+                    "🏆 Você acertou " + acertos +
+                    " de " + perguntas.length + " perguntas!";
+
+            }
+
+        });
+
+    });
+
+});
+
+// REINICIAR QUIZ
+
+document.getElementById("reiniciar").addEventListener("click", () => {
+
+    acertos = 0;
+    respondidas = 0;
+
+    perguntas.forEach((pergunta) => {
+
+        pergunta.dataset.respondida = "false";
+
+        const botoes = pergunta.querySelectorAll(".opcao");
+
+        botoes.forEach((botao) => {
+            botao.disabled = false;
+            botao.classList.remove("certa", "errada");
+        });
+
+        pergunta.querySelector(".feedback").textContent = "";
+
+    });
+
+    resultado.textContent = "Responda às três perguntas!";
+
+});
+
+</script>
+
+</body>
+</html>
